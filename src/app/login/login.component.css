@@ -1,0 +1,11 @@
+form{
+    /* background-color: #2932410b; */
+    background: linear-gradient(35deg, #91aee00b, #5b6e900b, #067cfa64);
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+}
+button:hover{
+    background-color: #2932410b;
+    border: 1px solid #293241;
+    color: #293241;
+}
