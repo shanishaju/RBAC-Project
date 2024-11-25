@@ -18,7 +18,7 @@
       <div class="d-flex">
         <h3 class="text-primary">Employee List</h3>
         <button class="btn btn-outline-primary ms-auto">
-          <a routerLink="/add-employee " class="text-decoration-none">
+          <a routerLink="/add-employee" class="text-decoration-none">
           <i class="fa-solid fa-user-plus me-2"></i>Add
           </a>
         </button> 
@@ -64,13 +64,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="text-center">dummy</td>
-                    <td class="text-center">dummy</td>
-                    <td class="text-center">dummy</td>
+                <tr *ngFor = "let employee of allEmployee" [hidden]="employee.id ==1">
+                    <td class="text-center">{{employee.id}}</td>
+                    <td class="text-center">{{employee.empusername}}</td>
+                    <td class="text-center">{{employee.empemail}}</td>
                     <td class="text-center">
-                        <button class="btn btn-danger">Inactive</button>
-                    </td>
+                      <!-- Conditional rendering -->
+                      <button [ngClass]="employee.emostatus === 'active' ? 'btn btn-success' : 'btn btn-warning'">
+                        {{ employee.emostatus }}
+                      </button>  
+                  </td>
                     <td class="d-flex justify-content-evenly text-center">
                         <button class="btn btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                         <button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>

@@ -15,9 +15,9 @@
   <div class="container-fluid">
     <div class="row p-3">
       <div class="col-md-1"></div>
-      <div class="col-md-10 p-2">
+      <div class="col-md-10 p-5">
         <h2 class="text-center mt-5 animated-text">Add New Employee Details</h2>
-        <form class="shadow p-5 mt-4" (ngSubmit)="addEmployee()">
+        <form #addEmp="ngForm" class=" shadow rounded p-5 mt-4 w-80" (ngSubmit)="addEmployee()">
           <div class="mb-3">
             <input
               type="text"
@@ -25,7 +25,7 @@
               placeholder="Username"
               class="form-control"
               name="empname"
-              [(ngModel)]="empusername"
+              [(ngModel)]="employeeDetails.empusername"
               #empnam="ngModel"
               required
               pattern="^[a-zA-Z]{3,}$"
@@ -46,7 +46,7 @@
               required
               email
               name="empmail"
-              [(ngModel)]="empemail"
+              [(ngModel)]="employeeDetails.empemail"
               #empmai="ngModel"
               required
               email
@@ -67,7 +67,7 @@
               aria-label="Default select example"
               aria-placeholder="Status"
               required
-              [(ngModel)]="emostatus"
+              [(ngModel)]="employeeDetails.emostatus"
               #emstat="ngModel"
             >
               <option selected disabled>Status</option>
@@ -83,7 +83,7 @@
           >
           <div class="mb-3">
             <button class="btn btn-warning me-3" (click)="cancel()">Cancel</button>
-            <button type="submit" class="btn btn-success">Add</button>
+            <button type="submit" class="btn btn-success" [disabled]="addEmp.invalid">Add</button>
           </div>
         </form>
       </div>

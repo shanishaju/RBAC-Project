@@ -10,13 +10,19 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
 
-
+  //login api
   loginApi(){
   return this.http.get(`${this.serverURL}/employee/1`)
   }
-
+  
+  //add employee api
   addEmployeeApi(reqBody:any){
     return this.http.post(`${this.serverURL}/employee`,reqBody)
+
+  }
+  // get all employees api
+  getAllEmployeeApi(){
+    return this.http.get(`${this.serverURL}/employee`)
 
   }
 }
