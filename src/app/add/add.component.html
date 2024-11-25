@@ -17,16 +17,23 @@
       <div class="col-md-1"></div>
       <div class="col-md-10 p-2">
         <h2 class="text-center mt-5 animated-text">Add New Employee Details</h2>
-        <form class="shadow p-5 mt-4">
+        <form class="shadow p-5 mt-4" (ngSubmit)="addEmployee()">
           <div class="mb-3">
             <input
               type="text"
-              name="empUsername"
+              name="empUser"
               placeholder="Username"
               class="form-control"
-              
+              name="empname"
+              [(ngModel)]="empusername"
+              #empnam="ngModel"
+              required
+              pattern="^[a-zA-Z]{3,}$"
             />
-            <span class="ms-2 text-danger" style="font-weight: 500"
+            <span
+              *ngIf="empnam.invalid && empnam.touched"
+              class="ms-2 text-danger"
+              style="font-weight: 500"
               >invalid</span
             >
           </div>
@@ -38,26 +45,44 @@
               class="form-control"
               required
               email
+              name="empmail"
+              [(ngModel)]="empemail"
+              #empmai="ngModel"
+              required
+              email
+
+
             />
-            <span class="ms-2 text-danger" style="font-weight: 500"
-              >invalid</span
-            >
+            <span
+            *ngIf="empmai.invalid && empmai.touched"
+              class="ms-2 text-danger"
+              style="font-weight: 500"
+              >invalid
+              </span>
           </div>
           <div class="mb-3">
             <select
               name="empStatus"
               class="form-select"
               aria-label="Default select example"
+              aria-placeholder="Status"
               required
+              [(ngModel)]="emostatus"
+              #emstat="ngModel"
             >
               <option selected disabled>Status</option>
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
             </select>
           </div>
-          <span class="ms-2 text-danger" style="font-weight: 500">invalid</span>
+          <span
+            *ngIf="emstat.invalid && emstat.touched"
+            class="ms-2 text-danger"
+            style="font-weight: 500"
+            >invalid</span
+          >
           <div class="mb-3">
-            <button class="btn btn-warning me-3">Cancel</button>
+            <button class="btn btn-warning me-3" (click)="cancel()">Cancel</button>
             <button type="submit" class="btn btn-success">Add</button>
           </div>
         </form>
