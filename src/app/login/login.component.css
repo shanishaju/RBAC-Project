@@ -9,3 +9,7 @@ button:hover{
     border: 1px solid #293241;
     color: #293241;
 }
+button{
+    background-color: #293241;
+    color: white;
+}

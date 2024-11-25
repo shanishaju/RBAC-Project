@@ -1,1 +1,68 @@
-<p>edit works!</p>
+<app-header></app-header>
+<div class="d-flex">
+  <!-- sidebar -->
+  <div id="sidebar">
+    <div class="mt-5 text-center text-light">
+      <a routerLink="/dashboard" class="text-decoration-none text-light">
+        <h2><i class="fa-solid fa-id-card-clip me-2"></i>DashBoard</h2>
+      </a>
+      <a routerLink="/employee" class="text-decoration-none text-light">
+        <h2 class="mt-4"><i class="fa-solid fa-users me-2"></i>Employees</h2>
+      </a>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row p-3">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 p-2">
+        <h2 class="text-center mt-5 animated-text">Edit Employee Details</h2>
+        <form class="shadow p-5 mt-4">
+          <div class="mb-3">
+            <input
+              type="text"
+              name="empUsername"
+              placeholder="Username"
+              class="form-control"
+              
+            />
+            <span class="ms-2 text-danger" style="font-weight: 500"
+              >invalid</span
+            >
+          </div>
+          <div class="mb-3">
+            <input
+              name="empemail"
+              type="text"
+              placeholder="Email"
+              class="form-control"
+              required
+              email
+            />
+            <span class="ms-2 text-danger" style="font-weight: 500"
+              >invalid</span
+            >
+          </div>
+          <div class="mb-3">
+            <select
+              name="empStatus"
+              class="form-select"
+              aria-label="Default select example"
+              required
+            >
+              <option selected disabled>Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <span class="ms-2 text-danger" style="font-weight: 500">invalid</span>
+          <div class="mb-3">
+            <button class="btn btn-warning me-3">Cancel</button>
+            <button type="submit" class="btn btn-success">Add</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>

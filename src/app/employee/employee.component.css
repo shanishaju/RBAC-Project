@@ -1,0 +1,19 @@
+#sidebar{
+    width: 225px;
+    background-color: #293241;
+    height: 88.5vh;
+
+}
+#maindiv{
+    width: 100%;
+    background-color: aqua;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+button:hover{
+    color: white;
+    
+
+}
