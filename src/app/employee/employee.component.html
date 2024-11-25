@@ -39,9 +39,9 @@
               Sort
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">By Id</a></li>
-              <li><a class="dropdown-item" href="#">By Name</a></li>
-            </ul>
+              <li><a class="dropdown-item" (click)="sortByName()" >By Name</a></li>
+              <li><a class="dropdown-item" (click)="sortById()" >By ID</a></li>
+          </ul>
           </div>
         </div>
         <button class="btn btn-success ms-auto">
@@ -76,7 +76,7 @@
                   </td>
                     <td class="d-flex justify-content-evenly text-center">
                         <button class="btn btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
-                        <button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                        <button (click)="removeEmployee(employee.id)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
             </tbody>

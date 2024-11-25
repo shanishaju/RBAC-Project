@@ -25,5 +25,12 @@ export class ApiService {
     return this.http.get(`${this.serverURL}/employee`)
 
   }
+
+  //delete employee api
+  deleteEmployeeApi(id:any){
+   return this.http.delete(`${this.serverURL}/employee/${id}`)
+  }
+
+
 }
  

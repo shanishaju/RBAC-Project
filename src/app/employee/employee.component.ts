@@ -19,6 +19,7 @@ export class EmployeeComponent  implements OnInit{
     this.getEmployee()
     
   }
+  //get employee
   getEmployee(){
     this.api.getAllEmployeeApi().subscribe({
       next:(res:any)=>{
@@ -33,16 +34,37 @@ export class EmployeeComponent  implements OnInit{
     })
 
   }
-  //sorting
-  sortById(){
+  //sorting by id
+  sortById() {
     this.allEmployee.sort((a:any,b:any)=>a.id-b.id)
+    // alert("sorting working properly")
   }
- 
-  sortByName(){
-    //localeCompare()-letter
-    //return -1, 1, 0 -before, after, equal
-    this.allEmployee.sort((a:any,b:any)=>a.name.localeCompare(b.name))
+    //sorting by name
+  sortByName() {
+    //localCompare - string to compare
+    // alert("sorting working properly")
+    // before : -1 , after: 1 and equal: 0
 
+    this.allEmployee.sort((a: any, b: any) => {
+      const nameA = a.empusername ? a.empusername.toLowerCase() : '';
+      const nameB = b.empusername ? b.empusername.toLowerCase() : '';
+      return nameA.localeCompare(nameB);
+    });
+  } 
+
+  //delete employee
+  removeEmployee(id:any){
+    this.api.deleteEmployeeApi(id).subscribe({
+      next:(res:any)=>{
+        // console.log(res);
+        this.getEmployee()
+        
+      },
+      error:(err:any)=>{
+        console.log(err);
+        
+      }
+    })
   }
 
 }

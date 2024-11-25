@@ -20,7 +20,7 @@ cancel(){
  
  addEmployee(){
   console.log(this.employeeDetails);
-  //api call
+  //api call add
   this.api.addEmployeeApi(this.employeeDetails).subscribe({
     next:(res:any)=>{
       console.log(res);
