@@ -38,6 +38,7 @@ Server : JSON
 
 # 📂 Project Structure
 
+```
 src/
 ├── app/
 │   ├── components/         # Components (Dashboard, Employee List, etc.)
@@ -47,7 +48,7 @@ src/
 ├── assets/                 # Static assets (images, CSS, etc.)
 ├── environments/           # Environment configuration
 └── index.html              # Main HTML file
-
+```
 # 🚀 How to Run Locally
 
 ```
