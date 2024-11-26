@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { ApiService } from '../service/api.service';
 
 
 @Component({
@@ -7,12 +8,18 @@ import * as Highcharts from 'highcharts';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   selected:Date= new Date()
-
+  
+  //pie chart
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions={}; 
-  constructor(){
+
+  isClicked:boolean =false
+  AdminDetails:any={}
+  total:number=0 
+
+  constructor( private api:ApiService){
     this.chartOptions ={
       chart: {
           type: 'pie'
@@ -83,5 +90,42 @@ export class DashboardComponent {
       ]
   }
   }
+
+  ngOnInit(): void {
+    this.api.loginApi().subscribe({
+        next: (res:any) => {
+            console.log(res)
+            this.AdminDetails=res
+            },
+            error: (err:any) => {
+                console.error(err);
+                }
+
+    })
+    
+    //for employee count
+    this.api.getAllEmployeeApi().subscribe
+    ({
+        next: (res:any) => {
+            console.log(res)
+            this.total=res.length-1 //-1 bcoz excluding admin
+            },
+            error: (err:any) => {
+                console.error(err);
+                }
+                })
+                
+
+
+
+  }
+
+  buttonClick(){
+    this.isClicked=true
+  }
+  cancel(){
+    this.isClicked=false
+  }
+
 
 }
