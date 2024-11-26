@@ -7,37 +7,36 @@ The project is live at: https://rbac-project-eta.vercel.app
 
 # 📑 Features
 1. Authentication
-Login Page:
-User authentication with validation.
-Redirects to the dashboard after successful login.
+* Login Page:
++ User authentication with validation.
++ Redirects to the dashboard after successful login.
 2. Dashboard
-Calendar: View events and dates.
-Pie Chart: Displays visual analytics.
-Profile Section:
-Admin can update their profile.
-Employee Count: Total number of employees displayed.
+* Calendar: View events and dates.
++ Pie Chart: Displays visual analytics.
++ Profile Section:Admin can update their profile.
++ Employee Count: Total number of employees displayed.
 3. Employee Management
-Employee Page:
-Displays a full list of employees with:
-Date and Time at the top.
-Sorting options (by ID, by Name).
-Search functionality for quick filtering.
-Pagination for managing large data sets.
-Employee Actions:
-View employee details (Active/Inactive status).
-Add new employees.
-Edit employee details.
-Delete employees.
-Download employee table in PDF format.
+* Employee Table
+* Date and Time
+* Sorting Sorting options (by ID, by Name).
+
+* Search functionality for quick filtering.
+* Pagination for managing large data sets.
+
+* View employee details (Active/Inactive status).
+* Add new employees.
+* Edit employee details.
+* Delete employees.
+* Download employee table in PDF format.
 4. Navbar
 Contains a Logout Button to securely end the session.
 
-# 📊 Dashboard Functionalities
-Interactive Calendar: Seamlessly integrates events and dates.
-Pie Chart: Displays data analytics for projects statistics.
-Search Functionality: Enables quick filtering of records.
-Sorting Options: Sort employees by ID or name.
-Download Records: Allows downloading employee records as a PDF.
+# 📊 Additional Functionalities
+* Interactive Calendar: Seamlessly integrates events and dates.
+* Pie Chart: Displays data analytics for projects statistics.
+* Search Functionality: Enables quick filtering of records.
+* Sorting Options: Sort employees by ID or name.
+* Download Records: Allows downloading employee records as a PDF.
 
 # 🛠️ Technologies Used
 Frontend: Angular
@@ -59,6 +58,11 @@ src/
 # 🚀 How to Run Locally
 
 ```
+npm install
+```
+
+```
+
 ng s -o 
 ```
 
