@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  serverURL: string = 'https://rbac-project-server.onrender.com/';
+  serverURL: string = 'https://rbac-project-server.onrender.com';
 
   //behaviour subject -data share b/w components
   dataShare = new BehaviorSubject(false);
