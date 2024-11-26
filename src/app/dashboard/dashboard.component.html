@@ -47,7 +47,7 @@
         >
           <div *ngIf="!isClicked" class="rounded d-flex flex-column justify-content-center align-items-center">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/4975/4975693.png"
+            [src]="profileimg"
               alt="noimg"
               width="200px"
               height="200px"
@@ -62,16 +62,16 @@
           >
             <h3 class="mb-3">Update Admin Details</h3>
             <label for="profileimage">
-              <input id="profileimage" type="file" style="display: none;">
+              <input id="profileimage" type="file" style="display: none;" (change)="getFile($event)">
               <img
-              src="https://cdn-icons-png.flaticon.com/512/4975/4975693.png"
+            [src]="profileimg"
               alt="noimg"
               width="150px"
               height="150px"
               style="border-radius: 50%"
             />
             </label>
-            <form class="mt-4 w-100" >
+            <form class="mt-4 w-100" (ngSubmit)="updateAdmin()">
               <div class="mb-3">
                 <input
                   type="text"
@@ -94,7 +94,7 @@
               </div>
               <div class="mb-3 d-flex justify-content-between">
                 <button class="btn btn-warning" (click)="cancel()">Cancle</button>
-                <button class="btn btn-success">Update</button>
+                <button type="submit" class="btn btn-success">Update</button>
               </div>
             </form>
           </div>

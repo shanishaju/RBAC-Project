@@ -43,6 +43,9 @@ export class ApiService {
 
   }
 
-
+  //api to update admin details
+  updateAdminApi(reqBody:any){
+    return this.http.put(`${this.serverURL}/employee/1`,reqBody)
+   
+  }
 }
- 

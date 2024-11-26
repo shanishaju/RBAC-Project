@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { ApiService } from '../service/api.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class DashboardComponent implements OnInit {
   isClicked:boolean =false
   AdminDetails:any={}
   total:number=0 
+  profileimg : string="https://cdn-icons-png.flaticon.com/512/4975/4975693.png"
+
 
   constructor( private api:ApiService){
     this.chartOptions ={
@@ -96,6 +99,9 @@ export class DashboardComponent implements OnInit {
         next: (res:any) => {
             console.log(res)
             this.AdminDetails=res
+            if(res.profile){
+                this.profileimg = res.profile
+            }
             },
             error: (err:any) => {
                 console.error(err);
@@ -116,16 +122,88 @@ export class DashboardComponent implements OnInit {
                 })
                 
 
-
-
   }
 
   buttonClick(){
     this.isClicked=true
   }
+
+  //cancel button 
   cancel(){
     this.isClicked=false
+    if(this.AdminDetails.profile){
+        this.profileimg= this.AdminDetails.profile
+
+    }
+    else{
+        this.profileimg="https://cdn-icons-png.flaticon.com/512/4975/4975693.png"
+
+    }
+
+
   }
 
+  //store image
+     getFile(event:any){
+
+        const file = event.target.files[0]
+
+        //fileReader - class used to convert img to url
+
+        //1) create an object for the class
+        const fr = new FileReader()
+
+        //2) url convert
+        fr.readAsDataURL(file)
+
+        //3) access url - onload()
+        fr.onload =(event:any)=>{
+            console.log(event.target.result);
+            this.profileimg=event.target.result
+            
+        }
+
+     }
+
+     //update admin
+     updateAdmin(){
+        this.AdminDetails.profile=this.profileimg
+
+
+        this.api.updateAdminApi(this.AdminDetails).subscribe({
+            next:(res:any)=>{
+                console.log(res);
+                //sweetalert
+                Swal.fire
+                ({
+                    title: 'Success',
+                    text: 'Profile updated successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                    })
+
+                    
+
+                
+                },
+                error:(err:any)=>{
+                    console.log(err);
+                    //alert
+                    Swal.fire
+                    ({
+                        title: 'Error',
+                        text: 'Failed to update admin',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                        })
+
+                    
+                        }
+
+        })
+
+
+     }
 
 }
+
