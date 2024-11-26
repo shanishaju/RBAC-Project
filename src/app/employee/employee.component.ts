@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { EmployeeModel } from 'src/employee.model';
+import jsPDF from 'jspdf'
+import autoTable from 'jspdf-autotable'
 
 @Component({
   selector: 'app-employee',
@@ -12,6 +14,12 @@ export class EmployeeComponent  implements OnInit{
 
   //variable to store data
   allEmployee:EmployeeModel[]=[]
+   
+  //for searching
+  searchkey:string =""
+
+  //date pipe
+   time:any = new Date() //fetches the system date and time
 
  constructor(private api:ApiService){}
 
@@ -66,5 +74,29 @@ export class EmployeeComponent  implements OnInit{
       }
     })
   }
+
+  //generate pdf 
+  // This jsPDF plugin adds the ability to generate PDF tables either by parsing HTML tables or by using Javascript data directly. 
+   generatePdf(){
+      // 1) create object for jspdf
+      const pdf = new jsPDF()
+     
+      let head=[['id','username','email','status']]
+      const body:any=[]
+        this.allEmployee.forEach((item:any)=>{
+          if(item.id!="1"){ // inorder to exclude admin
+            body.push([item.id,item.empusername,item.empemail,item.emostatus])
+
+          }
+        })
+
+      //2) call auto table function
+      autoTable(pdf,{head, body})
+
+      //3) download
+      pdf.save("Employee_Tale.pdf")
+
+
+   }
 
 }

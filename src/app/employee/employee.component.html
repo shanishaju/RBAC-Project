@@ -24,11 +24,11 @@
         </button> 
         
       </div>
-      <p class="mt-2">25/11/24, 10:13 AM</p>
+      <p class="mt-2">{{time | date :'short'}}</p>
 
       <div class="d-flex mt-5 px-md-5">
-        <div class="d-flex">
-          <input type="text" placeholder="Username" class="form-control" />
+        <div class="d-flex"> 
+          <input type="text" placeholder="Username" class="form-control" [(ngModel)]="searchkey" name="skey"  />
           <div class="dropdown ms-3">
             <button
               class="btn btn-primary dropdown-toggle"
@@ -44,7 +44,7 @@
           </ul>
           </div>
         </div>
-        <button class="btn btn-success ms-auto">
+        <button class="btn btn-success ms-auto" (click)="generatePdf()">
           Export <i class="fa-solid fa-file-export ms-2"></i>
         </button>
       </div>
@@ -64,7 +64,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let employee of allEmployee" [hidden]="employee.id ==1">
+                <tr *ngFor = "let employee of allEmployee | search: searchkey" [hidden]="employee.id ==1"> 
                     <td class="text-center">{{employee.id}}</td>
                     <td class="text-center">{{employee.empusername}}</td>
                     <td class="text-center">{{employee.empemail}}</td>

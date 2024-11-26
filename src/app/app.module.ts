@@ -16,7 +16,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './pipes/search.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http'
     AddComponent,
     EditComponent,
     HeaderComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SearchPipe
     
   ],
   imports: [
