@@ -14,7 +14,10 @@ export class EmployeeComponent  implements OnInit{
 
   //variable to store data
   allEmployee:EmployeeModel[]=[]
-   
+
+  //pagination
+  p: number = 1;
+
   //for searching
   searchkey:string =""
 

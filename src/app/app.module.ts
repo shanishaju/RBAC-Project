@@ -18,6 +18,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './pipes/search.pipe'
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { SearchPipe } from './pipes/search.pipe'
     MatNativeDateModule,
     HighchartsChartModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
 
   ],
   providers: [],
