@@ -1,7 +1,8 @@
 #sidebar{
     width: 225px;
     background-color: #293241;
-    height: 90.3vh;
+    /* height: 90.3vh; */
+    height: 100vh;
 
 }
 #maindiv{
