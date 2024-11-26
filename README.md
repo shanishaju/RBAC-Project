@@ -32,6 +32,13 @@ Download employee table in PDF format.
 4. Navbar
 Contains a Logout Button to securely end the session.
 
+# 📊 Dashboard Functionalities
+Interactive Calendar: Seamlessly integrates events and dates.
+Pie Chart: Displays data analytics for projects statistics.
+Search Functionality: Enables quick filtering of records.
+Sorting Options: Sort employees by ID or name.
+Download Records: Allows downloading employee records as a PDF.
+
 # 🛠️ Technologies Used
 Frontend: Angular
 Server : JSON
