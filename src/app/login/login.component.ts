@@ -27,9 +27,9 @@ export class LoginComponent {
     //api call
     this.api.loginApi().subscribe({
       next:(res:any)=>{
-        // console.log(res);
-        const {email,password} = res
-        if(email == this.email && password== this.password){
+        console.log(res);
+        const {empemail,password} = res
+        if(empemail == this.email && password == this.password){
           
             Swal.fire({
               title: "Wow!",
@@ -45,13 +45,13 @@ export class LoginComponent {
           Swal.fire({
             title: "Oops!",
             text: "Invalid Email or Password",
-            icon: "info"
+            icon: "error"
 
           })
         }
       },
       error:(err:any)=>{
-        // console.log(err);
+        console.log(err);
        
       }
     })
