@@ -1,3 +1,61 @@
+# Role-Based Access Control (RBAC) Project
+
+This is a Role-Based Access Control (RBAC) application developed using Angular. The application features a secure login system, a user-friendly dashboard, and robust functionalities for managing employees. Below is a detailed overview of the project and instructions on how to run it.
+
+# 🚀 Deployment
+The project is live at: https://rbac-project-eta.vercel.app
+
+# 📑 Features
+1. Authentication
+Login Page:
+User authentication with validation.
+Redirects to the dashboard after successful login.
+2. Dashboard
+Calendar: View events and dates.
+Pie Chart: Displays visual analytics.
+Profile Section:
+Admin can update their profile.
+Employee Count: Total number of employees displayed.
+3. Employee Management
+Employee Page:
+Displays a full list of employees with:
+Date and Time at the top.
+Sorting options (by ID, by Name).
+Search functionality for quick filtering.
+Pagination for managing large data sets.
+Employee Actions:
+View employee details (Active/Inactive status).
+Add new employees.
+Edit employee details.
+Delete employees.
+Download employee table in PDF format.
+4. Navbar
+Contains a Logout Button to securely end the session.
+
+# 🛠️ Technologies Used
+Frontend: Angular
+Server : JSON
+
+# 📂 Project Structure
+
+src/
+├── app/
+│   ├── components/         # Components (Dashboard, Employee List, etc.)
+│   ├── services/           # Services (API calls, Auth handling)
+│   ├── models/             # TypeScript models (if used)
+│   └── app.module.ts       # Main app module
+├── assets/                 # Static assets (images, CSS, etc.)
+├── environments/           # Environment configuration
+└── index.html              # Main HTML file
+
+# 🚀 How to Run Locally
+
+```
+ng s -o 
+```
+
+
+
 # EmployeePortal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
