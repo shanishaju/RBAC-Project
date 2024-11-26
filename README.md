@@ -8,13 +8,13 @@ The project is live at: https://rbac-project-eta.vercel.app
 # 📑 Features
 1. Authentication
 * Login Page:
-+ User authentication with validation.
-+ Redirects to the dashboard after successful login.
+  + User authentication with validation.
+  + Redirects to the dashboard after successful login.
 2. Dashboard
 * Calendar: View events and dates.
-+ Pie Chart: Displays visual analytics.
-+ Profile Section:Admin can update their profile.
-+ Employee Count: Total number of employees displayed.
+  + Pie Chart: Displays visual analytics.
+  + Profile Section:Admin can update their profile.
+  + Employee Count: Total number of employees displayed.
 3. Employee Management
 * Employee Table
 * Date and Time
