@@ -6,8 +6,8 @@ This is a Role-Based Access Control (RBAC) application developed using Angular. 
 [The project is live at] : (https://rbac-project-eta.vercel.app)
 
 # 🔑 Credentials for Login
-  * Email: tfghj
-  * Password: asd
+  * Email: admin@gmail.com
+  * Password: Admin123
 
 ### ⚠️ Note: Login Processing Time
 After logging in, it might take a few seconds to navigate to the dashboard. Please wait while the system processes your credentials and loads the data.
