@@ -31,7 +31,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EditComponent,
     HeaderComponent,
     PagenotfoundComponent,
-    SearchPipe
+    SearchPipe,
     
   ],
   imports: [
