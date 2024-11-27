@@ -9,7 +9,7 @@ This is a Role-Based Access Control (RBAC) application developed using Angular. 
   * Email: tfghj
   * Password: asd
 
-# ⚠️ Note: Login Processing Time
+## ⚠️ Note: Login Processing Time
 After logging in, it might take a few seconds to navigate to the dashboard. Please wait while the system processes your credentials and loads the data.
 
 # 📑 Features
